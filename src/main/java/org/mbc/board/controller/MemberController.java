@@ -25,7 +25,7 @@ public class MemberController {
     private final PasswordEncoder passwordEncoder;
 
     @GetMapping("/login")
-    public void loginGet111(String error, String logout){
+    public void loginGet(String error, String logout){
         // http://localhost/member/login?error=???
         // http://localhost/member/login?logout=???
         log.info("MemberController.loginGet메서드 실행....");
@@ -46,7 +46,7 @@ public class MemberController {
     }
     
     @PostMapping("/join") // http://localhost/member/join post메서드로 처리됨
-    public String joinPost111(MemberJoinDTO memberJoinDTO, RedirectAttributes redirectAttributes){
+    public String joinPost(MemberJoinDTO memberJoinDTO, RedirectAttributes redirectAttributes){
     // html에서 넘어오는 데이터 처리용
     
         log.info("MemberController.joinPost..... "); 

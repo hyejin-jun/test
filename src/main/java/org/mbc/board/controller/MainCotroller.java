@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class MainCotroller {
 
     @GetMapping("/")
-    public String root111(){
+    public String root(){
         return "redirect:/board/list";
     }
 }
