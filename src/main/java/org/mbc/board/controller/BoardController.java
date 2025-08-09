@@ -122,13 +122,6 @@ public class BoardController {
             return "redirect:/board/modify?"+link;
         }
 
-        boardService.modify(boardDTO);
-
-        redirectAttributes.addFlashAttribute("result", "modified");
-
-        redirectAttributes.addAttribute("bno", boardDTO.getBno());
-
-        return "redirect:/board/read";
     }
 
     @PreAuthorize("principal.username == #boardDTO.writer") // p719 작성자가 삭제 가능!!!!
@@ -150,6 +143,68 @@ public class BoardController {
     }
 
     private void removeFiles(List<String> files) {
+
+        for (String fileName:files) {
+            // import org.springframework.core.io.Resource
+            Resource resource = new FileSystemResource(uploadPath + File.separator + fileName);
+            String resourceName = resource.getFilename();
+
+
+            }
+
+        }//end for
+    }
+
+}
+
+    private void removeFiles(List<String> files) {
+
+        for (String fileName:files) {
+            // import org.springframework.core.io.Resource
+            Resource resource = new FileSystemResource(uploadPath + File.separator + fileName);
+            String resourceName = resource.getFilename();
+
+
+
+            } catch (Exception e) {
+                log.error(e.getMessage());
+            }
+
+        }//end for
+    }
+
+}
+
+
+    private void removeFiles222222222(List<String> files) {
+
+        for (String fileName:files) {
+            // import org.springframework.core.io.Resource
+            Resource resource = new FileSystemResource(uploadPath + File.separator + fileName);
+            String resourceName = resource.getFilename();
+
+
+            try {
+                String contentType = Files.probeContentType(resource.getFile().toPath());
+                resource.getFile().delete();
+
+                //섬네일이 존재한다면
+                if (contentType.startsWith("image")) {
+                    File thumbnailFile = new File(uploadPath + File.separator + "s_" + fileName);
+                    thumbnailFile.delete();
+                }
+
+            } catch (Exception e) {
+                log.error(e.getMessage());
+            }
+
+        }//end for
+    }
+
+}
+
+
+    private void removeFiles1111111111(List<String> files) {
 
         for (String fileName:files) {
             // import org.springframework.core.io.Resource
