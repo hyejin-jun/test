@@ -33,7 +33,7 @@ public class BoardController {
     private final BoardService boardService;
 
     @GetMapping("/list")
-    public void list(PageRequestDTO pageRequestDTO, Model model){
+    public void list111(PageRequestDTO pageRequestDTO, Model model){
         // 페이징 처리와 정렬과 검색이 추가된 리스트가 나옴.
 
         // p548쪽 제외PageResponseDTO<BoardDTO> responseDTO = boardService.list(pageRequestDTO);
@@ -55,7 +55,7 @@ public class BoardController {
     }
 
     @PostMapping("/register")
-    public String registerPost(@Valid BoardDTO boardDTO, BindingResult bindingResult, RedirectAttributes redirectAttributes){
+    public String registerPost111(@Valid BoardDTO boardDTO, BindingResult bindingResult, RedirectAttributes redirectAttributes){
         // BindingResult : @Valid,  @ModelAttribute에 데이터 바인딩 오류가 발생할때 오류정보를 담는다.
         // bindingResult가 없으면 400 오류가 발생하게 되고 Controller가 호출되지 않고 Error Page로 이동함.
 
@@ -91,7 +91,7 @@ public class BoardController {
 
     @PreAuthorize("isAuthenticated()") // 로그인한 상태이면!!! (권한에 상관없음)
     @GetMapping({"/read", "/modify"})
-    public void read(Long bno, PageRequestDTO pageRequestDTO, Model model){
+    public void read111(Long bno, PageRequestDTO pageRequestDTO, Model model){
 
         BoardDTO boardDTO = boardService.readOne(bno);
 

@@ -31,7 +31,7 @@ public class BoardRepositoryTests {
     private ReplyRepository replyRepository;
 
     @Test
-    public void testInsert(){
+    public void testInsert11(){
         // 데이터베이스에 데이터 주입(c) 테스트 코드
         IntStream.rangeClosed(1,100).forEach(i -> {
             // i 변수에 1~100까지 100개의 정수를 반복해서 생성
@@ -52,7 +52,7 @@ public class BoardRepositoryTests {
     } // testInsert 메서드 종료
 
     @Test
-    public void testSelect(){
+    public void testSelect11(){
         Long bno = 100L; // 게시물 번호가 100인 개체를 확인 해보자.
 
         Optional<Board> result = boardRepository.findById(bno);
