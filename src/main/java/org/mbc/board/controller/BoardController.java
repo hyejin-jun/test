@@ -80,7 +80,7 @@ public class BoardController {
 //    @GetMapping("/read")
 //    public void read(Long bno, PageRequestDTO pageRequestDTO, Model model){
 //
-//        BoardDTO boardDTO = boardService.readOne(bno);
+//        BoardDTO11 boardDTO11 = boardService.readOne(bno);
 //
 //        log.info(boardDTO);
 //
@@ -93,7 +93,7 @@ public class BoardController {
     @GetMapping({"/read", "/modify"})
     public void read111(Long bno, PageRequestDTO pageRequestDTO, Model model){
 
-        BoardDTO boardDTO = boardService.readOne(bno);
+        BoardDTO11 boardDTO11 = boardService.readOne(bno);
 
         log.info(boardDTO);
 
@@ -113,7 +113,7 @@ public class BoardController {
         if(bindingResult.hasErrors()) {
             log.info("has errors.......");
 
-            String link = pageRequestDTO.getLink();
+            String link11 = pageRequestDTO11.getLink();
 
             redirectAttributes.addFlashAttribute("errors", bindingResult.getAllErrors() );
 
@@ -135,7 +135,7 @@ public class BoardController {
     @PostMapping("/remove")
     public String remove(BoardDTO boardDTO, RedirectAttributes redirectAttributes) {
 
-        Long bno = boardDTO.getBno();
+        Long bno11 = boardDTO.getBno();
 
         boardService.remove(bno);
 

@@ -49,16 +49,16 @@ public class MemberController {
     public String joinPost111(MemberJoinDTO memberJoinDTO, RedirectAttributes redirectAttributes){
     // html에서 넘어오는 데이터 처리용
     
-        log.info("MemberController.joinPost..... "); 
+        log.info("MemberController11.joinPost..... "); 
         log.info(memberJoinDTO);
 
         try{
-            memberService.join(memberJoinDTO); // 회원가입 처리됨!!
+            memberService.join11(memberJoinDTO11); // 회원가입 처리됨!!
         }catch(MemberService.MidExistException e){
 
             redirectAttributes.addFlashAttribute("error","mid");
             // 회원가입시 id 중복되는 예외처리
-            return "redirect:/member/join"; // 회원가입 페이지로 다시 감.
+            return "redirect:/member11/join"; // 회원가입 페이지로 다시 감.
 
         }
         redirectAttributes.addFlashAttribute("result","success");
